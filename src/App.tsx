@@ -5,6 +5,7 @@ import { Hero } from "./blocks/hero";
 import { Popular } from "./blocks/popular";
 import { SecondBlock } from "./blocks/components/secondBlock";
 import { About } from "./blocks/about";
+import { Special } from "./blocks/special";
 
 interface Props {
   className?: string;
@@ -22,6 +23,7 @@ const App:React.FC<Props> = ({className}) => {
       <SecondBlock />
       </div>
       <About />
+      <Special />
     </div>
     </>
   )

@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "../container";
 import { cn } from "../../utils/utils";
+import { BlockTitle } from "./BlockTitle";
 
 
 interface Props {
@@ -11,7 +12,7 @@ export const SecondBlock: React.FC<Props> = ({className}) => {
     return (
         <Container>  
             <section className={cn(className, "pt-20")}>
-                <p className="px-10 font-semibold text-2xl">How to use delivery <span className="border-b-4 border-orange-400">Service</span></p>
+                <BlockTitle className="px-10" title="How to use delivery" underline="Service"/>
                 <div className="flex justify-around py-10">
                     <div className="flex  flex-col text-center py-5">
                         <img className="w-56" src="coffee-cup.png"></img>

@@ -9,11 +9,13 @@ export interface ItemsCardProps {
     title: string,
     image: string,
     price: number,
-    rating: number
-    popular?: boolean
+    rating: number,
+    description?: string,
+    popular?: boolean,
+    variants?: boolean,
 }
 
-export const ItemsCard: React.FC<ItemsCardProps> = ({title, image, price, rating, className}) => {
+export const ItemsCard: React.FC<ItemsCardProps> = ({title, image, price, rating, className, variants, description}) => {
     
     return (
         <div className={cn("bg-white h-[350px] w-[350px] border-4 border-third rounded-3xl shadow-md z-10", className)}> 
@@ -27,10 +29,14 @@ export const ItemsCard: React.FC<ItemsCardProps> = ({title, image, price, rating
                     <span className="text-center font-semibold text-xl">{price}$</span>
                 </div>
                 <div className="flex justify-between">
+                    {variants && 
                     <div className="flex justify-between gap-3">
                         <button className="text-orange-400 border px-3 border-orange-400">Hot</button>
                         <button className="text-orange-300 border px-3 border-orange-300">cold</button>
-                    </div>
+                    </div>}
+
+                    {description && !variants && <p className="text-gray-600">{description}</p>}
+                    
                     <ShoppingSign className="bg-brand text-white"/>
                 </div>
             </div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "./container";
 import { ItemsCard, ItemsCardProps } from "./itemsCard";
 import { Product } from "../assets/constants";
+import { BlockTitle } from "./components/BlockTitle";
 
 interface Props {
     className?: string,
@@ -9,17 +10,17 @@ interface Props {
 }
 
 
-export const Popular: React.FC<Props> = ({className}) => {
+export const Popular: React.FC<Props> = () => {
     const popular = Product.filter((item) => item.popular).slice(0, 3);
     return (
         <Container> 
             <div className="relative">
-            <p className="font-semibold text-xl">Popular <span className="border-b-4 border-orange-400">Now</span></p>
+            <BlockTitle title="Popular" underline="Now" />
             </div>
             <div className="flex justify-around py-5 relative sm:flex-col xl:flex-row">
             <div className="absolute bg-accents w-[100%] h-[250px] bottom-0 rounded-3xl"></div>
                 {popular.map((item) => (
-                    <ItemsCard key={item.id} {...item} />
+                    <ItemsCard  variants={true} key={item.id} {...item} />
                 ))}
                 
             </div>
