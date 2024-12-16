@@ -24,6 +24,10 @@ const App:React.FC<Props> = ({className}) => {
       </div>
       <About />
       <Special />
+
+      <div className="h-[200px] w-[100%] bg-black -my-10">
+        <div className=" hex w-[100px] h-[100px] bg-brand"></div>
+      </div>
     </div>
     </>
   )
